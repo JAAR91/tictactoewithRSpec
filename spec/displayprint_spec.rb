@@ -2,8 +2,7 @@
 require './lib/displayprint'
 
 describe Display do
-
-  let(:display){Display.new}
+  let(:display) { Display.new }
 
   describe '#just_board' do
     it 'returns the array teh array needed to print the board' do

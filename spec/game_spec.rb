@@ -2,8 +2,7 @@
 require './lib/game'
 
 describe Game do
-
-  let (:game){Game.new('jaar', 'eri')}
+  let(:game) { Game.new('jaar', 'eri') }
 
   describe '#game_eneded?' do
     it 'returns 1 if one of player fill the first horisontal line' do
@@ -74,11 +73,11 @@ describe Game do
       expect(game.p_player).to eql('eri')
     end
 
-    it "returns the symbol O if the symbol X was selected" do
+    it 'returns the symbol O if the symbol X was selected' do
       game.next_player
       game.next_player
       expect(game.p_symbol).to eql('O')
-    end 
+    end
   end
 
   describe '#only_board' do
