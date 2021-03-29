@@ -12,26 +12,29 @@ class Game
     @display = Display.new
   end
 
-  def only_board
+  def only_board(array = nil)
+    @board = array unless array.nil?
     @board
   end
 
   def game_ended?
-    game = if @current_player == @first_player
-             1
-           else
-             2
-           end
-    return game if @board[0] == @board[1] && @board[1] == @board[2]
-    return game if @board[3] == @board[4] && @board[4] == @board[5]
-    return game if @board[6] == @board[7] && @board[7] == @board[8]
-    return game if @board[0] == @board[3] && @board[3] == @board[6]
-    return game if @board[1] == @board[4] && @board[4] == @board[7]
-    return game if @board[2] == @board[5] && @board[5] == @board[8]
-    return game if @board[0] == @board[4] && @board[4] == @board[8]
-    return game if @board[2] == @board[4] && @board[4] == @board[6]
+    return 1 if @board[0] == @board[4] && @board[4] == @board[8]
+    return 1 if @board[2] == @board[4] && @board[4] == @board[6]
 
-    return 3 if @board.none?(Integer)
+    i = 0
+    while i < 7
+      return 1 if @board[i + 0] == @board[i + 1] && @board[i + 1] == @board[i + 2]
+
+      i += 3
+    end
+    i = 0
+    while i < 3
+      return 1 if @board[i + 0] == @board[i + 3] && @board[i + 3] == @board[i + 6]
+
+      i += 1
+    end
+
+    return 2 if @board.none?(Integer)
 
     0
   end

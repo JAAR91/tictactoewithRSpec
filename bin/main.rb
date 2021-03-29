@@ -160,7 +160,7 @@ end
 def end_game_message(game)
   display = Display.new
   display.display_clear
-  if game == 3
+  if game == 2
     jaarix('Its a tie, booo no one won!!!!!')
   else
     jaarix("Congratulations player #{@game_logic.p_player} you are super!!!!!")
