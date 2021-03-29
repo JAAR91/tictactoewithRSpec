@@ -6,7 +6,7 @@ class Game
   def initialize(player1, player2)
     @first_player = player1
     @second_player = player2
-    @symbol = 'X'
+    @symbol = nil
     @current_player = nil
     @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     @display = Display.new
@@ -19,6 +19,7 @@ class Game
 
   def game_ended?
     return 1 if @board[0] == @board[4] && @board[4] == @board[8]
+
     return 1 if @board[2] == @board[4] && @board[4] == @board[6]
 
     i = 0
@@ -27,6 +28,7 @@ class Game
 
       i += 3
     end
+
     i = 0
     while i < 3
       return 1 if @board[i + 0] == @board[i + 3] && @board[i + 3] == @board[i + 6]
