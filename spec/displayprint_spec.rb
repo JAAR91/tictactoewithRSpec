@@ -2,9 +2,11 @@
 require './lib/displayprint'
 
 describe Display do
+
+  let(:display){Display.new}
+
   describe '#just_board' do
     it 'returns the array teh array needed to print the board' do
-      display = Display.new
       expect(display.just_board).to eql([['+---+---+---+'],
                                          ['| ', 1, ' | ', 2, ' | ', 3, ' |'],
                                          ['+---+---+---+'],
@@ -14,9 +16,9 @@ describe Display do
                                          ['+---+---+---+']])
     end
   end
+
   describe '#transform_array' do
     it 'transform the board array using a new array as a parameter' do
-      display = Display.new
       array = [['+---+---+---+'],
                ['| ', 'x', ' | ', 'x', ' | ', 'x', ' |'],
                ['+---+---+---+'],
