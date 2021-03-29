@@ -40,7 +40,7 @@ class Game
   end
 
   def next_player
-    if @current_player == @first_player
+    if @symbol == 'X'
       @current_player = @second_player
       @symbol = 'O'
     else
