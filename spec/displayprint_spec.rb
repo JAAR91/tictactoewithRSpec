@@ -1,5 +1,5 @@
-# spec..bin/displayprint.rb
-require '../bin/displayprint'
+# spec..lib/displayprint.rb
+require './lib/displayprint'
 
 describe Display do
   describe '#just_board' do
@@ -24,7 +24,7 @@ describe Display do
                ['+---+---+---+'],
                ['| ', 7, ' | ', 8, ' | ', 9, ' |'],
                ['+---+---+---+']]
-      expect(display.transform_array('x', 'x', 'x', 4, 5, 6, 7, 8, 9)).to eql(array)
+      expect(display.transform_array(['x', 'x', 'x', 4, 5, 6, 7, 8, 9])).to eql(array)
     end
   end
 end

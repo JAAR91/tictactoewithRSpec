@@ -1,5 +1,5 @@
 # spec..lib/game.rb
-require '../lib/game'
+require './lib/game'
 
 describe Game do
   describe '#game_eneded?' do
